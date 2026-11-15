@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Budget Shopper Kenya</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <span>🇰🇪</span>
+            Smart Budget Shopper
+        </a>
+        <div class="location-info" id="locationText">
+            📍 Detecting Location...
+        </div>
+    </header>
+
+    <main>
+        <!-- Setup Sidebar -->
+        <section class="setup-section">
+            <div class="card">
+                <h3>Shopping Setup</h3>
+                <div class="input-group">
+                    <label for="budgetInput">Your Budget (KES)</label>
+                    <input type="number" id="budgetInput" placeholder="e.g. 5000" min="0">
+                </div>
+
+                <div class="input-group">
+                    <label>Categories</label>
+                    <div class="category-options">
+                        <label class="category-checkbox">
+                            <input type="checkbox" class="category-check" value="Food & Groceries" checked>
+                            Food & Groceries
+                        </label>
+                        <label class="category-checkbox">
+                            <input type="checkbox" class="category-check" value="Household Items" checked>
+                            Household Items
+                        </label>
+                        <label class="category-checkbox">
+                            <input type="checkbox" class="category-check" value="Personal Care">
+                            Personal Care
+                        </label>
+                        <label class="category-checkbox">
+                            <input type="checkbox" class="category-check" value="Snacks & Drinks">
+                            Snacks & Drinks
+                        </label>
+                        <label class="category-checkbox">
+                            <input type="checkbox" class="category-check" value="Baby Products">
+                            Baby Products
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" id="generateBtn">Generate Products</button>
+            </div>
+
+            <div class="card" style="background: var(--text-main); color: white;">
+                <h3>Summary</h3>
+                <div style="display: grid; gap: 1rem;">
+                    <div class="summary-item">
+                        <span class="summary-label">Budget</span>
+                        <div class="summary-value">KES <span id="displayBudget">0</span></div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Cost</span>
+                        <div class="summary-value">KES <span id="displayTotal">0</span></div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Remaining</span>
+                        <div class="summary-value">KES <span id="displayRemaining">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Display Area -->
+        <section class="products-section">
+            <div class="grid" id="productGrid">
+                <!-- Products dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Cart Toggle -->
+    <div class="cart-toggle" id="cartToggle">
+        <span class="badge" id="cartBadge">0</span>
+        🛒
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Shopping Basket</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            
+            <div class="cart-items-list" id="cartItemsList">
+                <!-- Items inserted here -->
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="buyNowBtn">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Redirect Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select Supermarket</h2>
+                <button class="close-btn" id="closeCheckout">&times;</button>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                We'll redirect you to checkout your items on the official store.
+            </p>
+            <div class="retailers-grid" id="retailersGrid">
+                <!-- Retailer buttons here -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/script.js"></script>
+</body>
+</html>
+

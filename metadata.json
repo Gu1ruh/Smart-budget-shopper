@@ -1,0 +1,6 @@
+{
+  "name": "Smart Budget Shopper Kenya",
+  "description": "A fully functional vanilla JS application for budget-based shopping at Kenyan supermarkets.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}
